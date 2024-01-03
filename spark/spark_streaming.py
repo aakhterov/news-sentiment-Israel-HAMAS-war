@@ -52,5 +52,5 @@ news_schema = StructType([
 ])
 news = spark.readStream.schema(news_schema).csv(PATH_TO_DATA, header=True, sep=';')
 
-query = news.writeStream.foreachBatch(func).trigger(processingTime='1 hour').start()
+query = news.writeStream.foreachBatch(func).trigger(processingTime='30 minutes').start()
 query.awaitTermination()

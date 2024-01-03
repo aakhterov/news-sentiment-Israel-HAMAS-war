@@ -5,7 +5,7 @@ from typing import List
 from datetime import datetime
 from collections import OrderedDict
 
-from interfaces import Saver
+from news_collector.interfaces import Saver
 
 
 class SaveToFile(Saver):

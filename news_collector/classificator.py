@@ -7,7 +7,6 @@ class Classificator:
     def __init__(self):
         self.API_token = os.environ["API_TOKEN"]
         self.API_url = "https://api-inference.huggingface.co/models/aav-ds/news_sentiment_model"
-        # self.API_url = "https://b7e5c7608b45f6b9b8f9a76e97d30042.m.pipedream.net"
 
     def __query(self, payload):
         headers = {"Authorization": f"Bearer {self.API_token}"}
