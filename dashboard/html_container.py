@@ -1,5 +1,6 @@
 from dash import html, dash_table, dcc
 import dash_bootstrap_components as dbc
+from dash_iconify import DashIconify
 from explanation import EXPLANATION
 
 def get_title_container():
@@ -145,3 +146,27 @@ def get_modal():
                 is_open=False,
             )
 
+
+def get_bottom_container():
+    return html.Div(
+        id="bottom-container",
+        children=[
+            html.Hr(),
+            html.Div([
+                html.Div([
+                    html.A(
+                        DashIconify(icon="mdi:linkedin", width=50),
+                        href="https://www.linkedin.com/in/alexander-akhterov/",
+                        target="_blank",
+                        style={"color": "#0B65C2"}
+                    ),
+                    html.A(
+                        DashIconify(icon="mdi:github", width=50),
+                        href="https://github.com/aakhterov/news-sentiment-Israel-HAMAS-war",
+                        target="_blank",
+                        style={"color": "black"}
+                    ),
+                ], className="position-absolute end-0"),
+            ], className="position-relative bottom-0 py-3"),
+            ]
+        )

@@ -12,7 +12,7 @@ from database import (get_dataframe_from_db, get_start_date, get_end_date, get_n
 from sentiment import get_class, get_classes, get_sentiment_distribution, get_total_statistic
 from html_container import (get_datatable_container, get_controller_container,
                             get_graph_container, get_back_button_container,
-                            get_title_container, get_modal
+                            get_title_container, get_modal, get_bottom_container
                             )
 
 
@@ -45,6 +45,7 @@ def make_layout():
     back_button_container = get_back_button_container()
     graph_container = get_graph_container()
     table_container = get_datatable_container()
+    bottom_container =  get_bottom_container()
     modal = get_modal()
 
     return dbc.Row ([
@@ -58,6 +59,7 @@ def make_layout():
                     back_button_container,
                     graph_container,
                     table_container,
+                    bottom_container,
                     dcc.Input(id="is_intraday", type="hidden", value=0),
                     modal,
                     dcc.Store(id='memory')
